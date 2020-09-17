@@ -46,5 +46,5 @@ modify_readme "$1"
 
 # Commit and push
 git add -A
-git commit -m "Add some fact"
+git commit -m "21st September"
 git push -u $repo master
