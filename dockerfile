@@ -1,7 +1,7 @@
 FROM alpine:latest
 
 RUN apk update
-RUN apk add --no-cache bash date curl tee git 
+RUN apk add --no-cache bash curl git 
 
 COPY entrypoint.sh /usr/bin/
 

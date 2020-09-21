@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
+shopt -s globstar
+
 # Init var
 goal_date="$(date +"%y0921")"
 current_date="$(date +"%y%m%d")"
 lyric="$(curl -s --get "https://makeitpersonal.co/lyrics" --data-urlencode "artist=Earth, Wind & Fire" --data-urlencode "title=September")"
-readme_content="# IT'S 21<sup>st</sup> SEPTEMBER\n![](https://media4.giphy.com/media/xT9IgDMmNmJ6HvzyFi/giphy.gif)"
+readme_content="# IT'S 21<sup>st</sup> SEPTEMBER\n![](https://data.whicdn.com/images/319705119/original.gif)"
 readme_file="$(ls | grep -i readme)"
 
 
@@ -20,7 +22,7 @@ git pull $repo master
 # If 21st then change all file content with september lyric
 # Else wait for september
 if [[ $current_date -eq $goal_date ]]; then
-  echo "$lyric" | tee **/*
+  echo "$lyric" | tee **/**/*
   git_message="IT'S SEPTEMBER!!!"
 else
   # Set goal_date to next year if current_date is greater than it
